@@ -4,4 +4,4 @@
 
 hi nick nick retarded
 
-nick more retarded 
+nick more retarded
