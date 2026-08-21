@@ -4,4 +4,4 @@
 
 hi nick nick retarded
 
-nick more retarded
+ning ning bao me mikkisnowz
