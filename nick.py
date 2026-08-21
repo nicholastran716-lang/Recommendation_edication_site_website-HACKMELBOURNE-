@@ -1,13 +1,58 @@
 import streamlit as st
-import pandas as pd
- 
-
-name = st.text_input("What is your name?")
-
-def main():
-    st.title("Welcome " + name)
-    st.write("This is gay")
 
 
-if __name__ == "__main__":
-    main()
+websites = [
+    {
+        "name": "Khan Academy",
+        "subjects": ["maths", "science"],
+        "levels": ["beginner", "intermediate"],
+        "styles": ["video", "practice"],
+        "price": "free"
+    },
+
+    {
+        "name": "Coursera",
+        "subjects": ["computer science", "business", "science"],
+        "levels": ["beginner", "intermediate", "advanced"],
+        "styles": ["video", "reading", "projects"],
+        "price": "mixed"
+    }
+]
+
+
+
+subject = st.selectbox(
+    "What do you want to learn?",
+    ["Maths", "Science", "Computer Science", "Languages"]
+)
+
+level = st.radio(
+    "What level are you?",
+    ["Beginner", "Intermediate", "Advanced"]
+)
+
+learning_style = st.multiselect(
+    "How do you like learning?",
+    ["Videos", "Reading", "Interactive exercises", "Projects"]
+)
+
+recommendations = []
+score = 0
+
+if subject in websites["subjects"]:
+    score += 4
+
+if level in websites["levels"]:
+    score += 3
+
+for style in learning_style:
+    if style in websites["styles"]:
+        score += 2
+
+
+
+recommendations.sort(
+    key=lambda x: x["score"],
+    reverse=True
+)
+
