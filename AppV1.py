@@ -19,6 +19,8 @@ websites = [
         "price": "mixed",
         "url": "https://www.coursera.org/"
     }
+
+
 ]
 
 
@@ -73,4 +75,10 @@ for recommendation in recommendations:
         f"[{website['name']}]({website['url']}) - score: {recommendation['score']}"
     )
     
-
+user_prompt = st.text_area(
+    "Describe what you're looking for in more detail",
+    placeholder=(
+        "Example: I want a free beginner computer science course "
+        "with lots of projects and videos"
+    )
+)
